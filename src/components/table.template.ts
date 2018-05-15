@@ -25,7 +25,7 @@ export const TABLE_TEMPLATE = `
                         <span class="column-sort-icon" *ngIf="column.sortable">
                             <span class="glyphicon glyphicon-sort column-sortable-icon" [hide]="column.property === sortBy"></span>
                             <span [hide]="column.property !== sortBy">
-                                 <span class="glyphicon" [ngClass]="{'glyphicon-triangle-top': !sortAsc, 'glyphicon-triangle-bottom': sortAsc}"></span>
+                                 <span class="glyphicon" [ngClass]="{'glyphicon-triangle-top': (sortAsc && reverse_arrow || !sortAsc && !reverse_arrow), 'glyphicon-triangle-bottom': (sortAsc && !reverse_arrow || !sortAsc && reverse_arrow)}"></span>
                             </span>
                         </span>
                         <span *ngIf="column.resizable" class="column-resize-handle" (mousedown)="resizeColumnStart($event, column, th)"></span>

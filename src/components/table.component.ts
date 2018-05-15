@@ -61,6 +61,7 @@ export class DataTable implements DataTableParams, OnInit {
 	@Input() autoReload = true;
 	@Input() showReloading = false;
 	@Input() noDataMessage: string;
+	@Input() sort_reverse_arrow = false;
 
 	// UI state without input:
 
